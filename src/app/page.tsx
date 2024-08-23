@@ -2,6 +2,7 @@ import { Container } from "@/app/components/container";
 import { GameProps } from "@/app/utils/types/game";
 import Image from "next/image";
 import Link from "next/link";
+import { BsArrowRightSquare } from "react-icons/bs";
 
 async function getDalyGame() {
   try {
@@ -21,14 +22,21 @@ export default async function Home() {
         <h1 className="text-center font-bold text-xl mt-8 mb-5">Separamos um jogo exclusivo pra você</h1>
         <Link href={`/game/${dalyGame.id}`}>
           <section className="w-full bg-black rounded-lg">
-            <Image
-              src={dalyGame.image_url}
-              alt={dalyGame.title}
-              priority={true}
-              quality={100}
-              width={100}
-              height={100}
-            />
+            <div className="w-full max-h-96 h-96 relative rounded-lg group">
+              <div className=" w-full absolute z-20 bottom-0 p-1 flex justify-center items-center gap-2 bg-gray-950 rounded-b-lg group-hover:bg-orange-700 transition-all duration-500">
+                <p className="font-bold text-white text-x">{dalyGame.title}</p>
+              </div>
+
+              <Image
+                src={dalyGame.image_url}
+                alt={dalyGame.title}
+                priority={true}
+                quality={100}
+                fill={true}
+                className="max-h-96 object-cover rounded-lg opacity-70 group-hover:opacity-90 transition-all duration-500"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw"
+              />
+            </div>
           </section>
         </Link>
       </Container>
