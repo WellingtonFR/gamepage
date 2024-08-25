@@ -10,10 +10,10 @@ interface GameCardProps {
 export function GameCard({ data }: GameCardProps) {
   return (
     <Link href={`/game/${data.id}`}>
-      <section className="w-full bg-slate-800 rounded-lg p-4 mb-1 hover:bg-orange-700 transition-all duration-300">
-        <div className="relative w-full h-56 hover:scale-105 transition-all duration-300">
+      <section className="w-ful rounded-lg p-2 mb-1 transition-all duration-300 group">
+        <div className="relative w-full h-56 group-hover:scale-105 transition-all duration-300">
           <Image
-            className="rounded-lg object-cover"
+            className="rounded-t-lg object-cover"
             src={data.image_url}
             alt={data.title}
             fill={true}
@@ -22,11 +22,10 @@ export function GameCard({ data }: GameCardProps) {
           />
         </div>
 
-        <div className="flex items-center mt-4 justify-between">
-          <p className="text-sm font-bold px-2 text-ellipsis truncate whitespace-nowrap overflow-hidden text-white">
+        <div className="flex items-center justify-between">
+          <p className="group-hover:scale-105 transition-all duration-300 text-sm p-1 h-7 font-bold text-ellipsis truncate whitespace-nowrap overflow-hidden text-white bg-black w-full rounded-b-lg text-center">
             {data.title}
           </p>
-          <BiRightArrowCircle size={24} className="text-white" />
         </div>
       </section>
     </Link>

@@ -31,11 +31,11 @@ export default async function Home() {
   return (
     <main className="w-full">
       <Container>
-        <h1 className="text-center font-bold text-xl mt-8 mb-5">Separamos um jogo exclusivo pra você</h1>
+        <h1 className="text-center font-bold text-xl mt-8 mb-5">Indicação de jogo para você</h1>
         <Link href={`/game/${dalyGame.id}`}>
           <section className="w-full bg-black rounded-lg">
             <div className="w-full max-h-96 h-96 relative rounded-lg group">
-              <div className=" w-full absolute z-20 bottom-0 p-1 flex justify-center items-center gap-2 bg-gray-950 rounded-b-lg group-hover:bg-orange-700 transition-all duration-500">
+              <div className=" w-full absolute z-20 bottom-0 p-1 flex justify-center items-center gap-2 bg-gray-950 rounded-b-lg group-hover:bg-gray-800 transition-all duration-500">
                 <p className="font-bold text-white text-x">{dalyGame.title}</p>
               </div>
 
